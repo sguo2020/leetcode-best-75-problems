@@ -1,0 +1,94 @@
+1	- Two Sum - https://leetcode.com/problems/two-sum/
+121	- Best Time to Buy and Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+217	- Contains Duplicate - https://leetcode.com/problems/contains-duplicate/
+M238	- Product of Array Except Self - https://leetcode.com/problems/product-of-array-except-self/
+E53	- Maximum Subarray - https://leetcode.com/problems/maximum-subarray/
+m152	- Maximum Product Subarray - https://leetcode.com/problems/maximum-product-subarray/
+m153	- Find Minimum in Rotated Sorted Array - https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+m33	- Search in Rotated Sorted Array - https://leetcode.com/problems/search-in-rotated-sorted-array/
+m15	- 3Sum - https://leetcode.com/problems/3sum/
+m11	- Container With Most Water - https://leetcode.com/problems/container-with-most-water/
+	
+	Binary
+m371	- Sum of Two Integers - https://leetcode.com/problems/sum-of-two-integers/
+e191	- Number of 1 Bits - https://leetcode.com/problems/number-of-1-bits/
+e338	- Counting Bits - https://leetcode.com/problems/counting-bits/
+e268	- Missing Number - https://leetcode.com/problems/missing-number/
+e190	- Reverse Bits - https://leetcode.com/problems/reverse-bits/
+	
+	Dynamic Programming
+E70	- Climbing Stairs - https://leetcode.com/problems/climbing-stairs/
+m322	- Coin Change - https://leetcode.com/problems/coin-change/
+m300	- Longest Increasing Subsequence - https://leetcode.com/problems/longest-increasing-subsequence/
+	- Longest Common Subsequence -
+m139	- Word Break Problem - https://leetcode.com/problems/word-break/
+m377	- Combination Sum - https://leetcode.com/problems/combination-sum-iv/
+m198	- House Robber - https://leetcode.com/problems/house-robber/
+m213	- House Robber II - https://leetcode.com/problems/house-robber-ii/
+m91	- Decode Ways - https://leetcode.com/problems/decode-ways/
+m62	- Unique Paths - https://leetcode.com/problems/unique-paths/
+m55	- Jump Game - https://leetcode.com/problems/jump-game/
+	
+	Graph
+m133	- Clone Graph - https://leetcode.com/problems/clone-graph/
+m207	- Course Schedule - https://leetcode.com/problems/course-schedule/
+m417	- Pacific Atlantic Water Flow - https://leetcode.com/problems/pacific-atlantic-water-flow/
+m200	- Number of Islands - https://leetcode.com/problems/number-of-islands/
+m128	- Longest Consecutive Sequence - https://leetcode.com/problems/longest-consecutive-sequence/
+locked	- Alien Dictionary (Leetcode Premium) - https://leetcode.com/problems/alien-dictionary/
+locked	- Graph Valid Tree (Leetcode Premium) - https://leetcode.com/problems/graph-valid-tree/
+locked	- Number of Connected Components in an Undirected Graph (Leetcode Premium) - https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+	
+	Interval
+m57	- Insert Interval - https://leetcode.com/problems/insert-interval/
+m56	- Merge Intervals - https://leetcode.com/problems/merge-intervals/
+m435	- Non-overlapping Intervals - https://leetcode.com/problems/non-overlapping-intervals/
+locked	- Meeting Rooms (Leetcode Premium) - https://leetcode.com/problems/meeting-rooms/
+locked	- Meeting Rooms II (Leetcode Premium) - https://leetcode.com/problems/meeting-rooms-ii/
+	
+	Linked List
+e206	- Reverse a Linked List - https://leetcode.com/problems/reverse-linked-list/
+e141	- Detect Cycle in a Linked List - https://leetcode.com/problems/linked-list-cycle/
+e21	- Merge Two Sorted Lists - https://leetcode.com/problems/merge-two-sorted-lists/
+h23	- Merge K Sorted Lists - https://leetcode.com/problems/merge-k-sorted-lists/
+m19	- Remove Nth Node From End Of List - https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+m143	- Reorder List - https://leetcode.com/problems/reorder-list/
+	
+	Matrix
+m73	- Set Matrix Zeroes - https://leetcode.com/problems/set-matrix-zeroes/
+m54	- Spiral Matrix - https://leetcode.com/problems/spiral-matrix/
+m48	- Rotate Image - https://leetcode.com/problems/rotate-image/
+m79	- Word Search - https://leetcode.com/problems/word-search/
+	
+	String
+m3	- Longest Substring Without Repeating Characters - https://leetcode.com/problems/longest-substring-without-repeating-characters/
+m424	- Longest Repeating Character Replacement - https://leetcode.com/problems/longest-repeating-character-replacement/
+h76	- Minimum Window Substring - https://leetcode.com/problems/minimum-window-substring/
+e242	- Valid Anagram - https://leetcode.com/problems/valid-anagram/
+m49	- Group Anagrams - https://leetcode.com/problems/group-anagrams/
+e20	- Valid Parentheses - https://leetcode.com/problems/valid-parentheses/
+e125	- Valid Palindrome - https://leetcode.com/problems/valid-palindrome/
+m5	- Longest Palindromic Substring - https://leetcode.com/problems/longest-palindromic-substring/
+m647	- Palindromic Substrings - https://leetcode.com/problems/palindromic-substrings/
+locked	- Encode and Decode Strings (Leetcode Premium) - https://leetcode.com/problems/encode-and-decode-strings/
+	
+	Tree
+e104	- Maximum Depth of Binary Tree - https://leetcode.com/problems/maximum-depth-of-binary-tree/
+e100	- Same Tree - https://leetcode.com/problems/same-tree/
+e226	- Invert/Flip Binary Tree - https://leetcode.com/problems/invert-binary-tree/
+h124	- Binary Tree Maximum Path Sum - https://leetcode.com/problems/binary-tree-maximum-path-sum/
+m102	- Binary Tree Level Order Traversal - https://leetcode.com/problems/binary-tree-level-order-traversal/
+h297	- Serialize and Deserialize Binary Tree - https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+e572	- Subtree of Another Tree - https://leetcode.com/problems/subtree-of-another-tree/
+m105	- Construct Binary Tree from Preorder and Inorder Traversal - https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+m98	- Validate Binary Search Tree - https://leetcode.com/problems/validate-binary-search-tree/
+m230	- Kth Smallest Element in a BST - https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+e235	- Lowest Common Ancestor of BST - https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+m208	- Implement Trie (Prefix Tree) - https://leetcode.com/problems/implement-trie-prefix-tree/
+m211	- Add and Search Word - https://leetcode.com/problems/add-and-search-word-data-structure-design/
+h212	- Word Search II - https://leetcode.com/problems/word-search-ii/
+	
+	Heap
+h23	- Merge K Sorted Lists - https://leetcode.com/problems/merge-k-sorted-lists/
+m347	- Top K Frequent Elements - https://leetcode.com/problems/top-k-frequent-elements/
+h295	- Find Median from Data Stream - https://leetcode.com/problems/find-median-from-data-stream/
