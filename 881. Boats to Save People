@@ -1,0 +1,27 @@
+https://leetcode.com/problems/boats-to-save-people/
+
+
+
+class Solution:
+    def numRescueBoats(self, people: List[int], limit: int) -> int:
+
+        people.sort()
+
+        left=0
+        right=len(people)-1
+        n=0
+        while left <=right:
+            if left == right:
+                n+=1
+                break
+            elif people[left]+people[right]>limit:
+                n+=1
+                right -=1
+            else:
+                n+=1
+                left +=1
+                right-=1
+        return n
+        
+people = [3,5,3,4,5,6,2,1]
+limit = 6
