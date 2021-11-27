@@ -1,18 +1,19 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        sub = []
-        longest = 0
-        for letter in s:
-            if letter in sub:
-
-                sub =sub[sub.index(letter)+1:]
-                #print(sub)
-                sub.append(letter)
-                #print(sub)
-
-            else:
-                sub.append(letter)
-                #print(sub)
-            longest =max(longest, len(sub))
-            #print(longest)
-        return(longest)
+        seen_map = {}
+        max_size = 0
+        current_size = 0
+        min_index = -1
+        for i in range(len(s)):
+            index = seen_map.get(s[i], -1)
+            seen_map[s[i]] = i
+            if index > min_index:
+                min_index = index
+                #current_size = 1
+                continue
+            
+            current_size = i - min_index
+            if current_size > max_size:
+                    max_size = current_size
+            
+        return max_size
