@@ -1,0 +1,47 @@
+https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
+class Solution:
+    def searchRange(self, nums, target):
+        if nums == []:
+            return [-1,-1]
+        
+        left = 0
+        right = len(nums)
+        def find_left(nums, left, right):
+            while left < right: 
+                mid = (left+right)//2
+                if nums[mid] < target:
+                    left = mid + 1
+                elif nums[mid] > target:
+                    right = mid -1
+                elif nums[mid-1] != target:
+                        return mid
+                else:
+                    right = mid -1
+                find_left(nums, left, right)
+            if nums[left] == target:
+                return left
+            else: return -1
+
+        def find_right(nums, left, right):
+            while left < right: 
+                mid = (left+right)//2
+                if nums[mid] < target:
+                    left = mid + 1
+                elif nums[mid] > target:
+                    right = mid -1
+                elif nums[mid+1] != target:
+                        return mid
+                else:
+                    left = mid + 1
+                find_left(nums, left, right)
+            if nums[right] == target:
+                return right
+            else: return -1
+
+        first = find_left(nums, 0, len(nums))
+        print(first, 1)
+        second = find_right(nums, 0, len(nums))
+        print(second, 2)
+
+        return [first, second]
