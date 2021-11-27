@@ -1,0 +1,18 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        sub = []
+        longest = 0
+        for letter in s:
+            if letter in sub:
+
+                sub =sub[sub.index(letter)+1:]
+                #print(sub)
+                sub.append(letter)
+                #print(sub)
+
+            else:
+                sub.append(letter)
+                #print(sub)
+            longest =max(longest, len(sub))
+            #print(longest)
+        return(longest)
