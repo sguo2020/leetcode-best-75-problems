@@ -1,0 +1,41 @@
+
+def get_options(i, size):
+    res = []
+    if i > 0:
+        res.append(i - 1)
+    if i < size - 1:
+        res.append(i + 1)
+    return res
+
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        is_open = []
+        for row in board:
+            is_open.append([True] * len(board[0]))        
+
+        def backtrack(i, j, n):
+            if n == len(word):
+                return True
+            
+            for a, b in (*zip([i, i], get_options(j, len(board[0]))),
+                         *zip(get_options(i, len(board)), [j, j])):
+                if board[a][b] == word[n] and is_open[a][b]:
+                    is_open[a][b] = False
+                    if backtrack(a, b, n + 1):
+                        return True
+                    is_open[a][b] = True
+                    
+        if len(word) > 2:
+            for i in range(len(word) - 1):
+                if not self.exist(board, word[i:i+2]):
+                    return False
+                    
+        for i, row in enumerate(board):
+            for j, el in enumerate(row):
+                if el == word[0]:
+                    is_open[i][j] = False
+                    if backtrack(i, j, 1):
+                        return True
+                    is_open[i][j] = True
+                    
+        return False
