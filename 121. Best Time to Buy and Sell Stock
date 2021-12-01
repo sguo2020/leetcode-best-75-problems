@@ -1,0 +1,13 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        low = high = prices[0]
+        profit = 0
+        
+        for i in prices:
+            if i < low:
+                low = high = i
+            elif i > high:
+                high = i
+                profit = max(profit, high-low)
+                
+        return profit
