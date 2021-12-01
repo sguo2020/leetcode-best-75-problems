@@ -1,11 +1,11 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        openmap = {'(':True, '{':True, '[':True}
+        openset = {'(',  '{',  '['}
         match = {'(':')', '{':'}', '[':']'}
         mystack = []
         for l in s:
             #print(l, mystack)
-            if l in openmap:
+            if l in openset:
                 mystack.append(l)
             else:
                 if len(mystack) == 0 or l != match[mystack.pop()]:
