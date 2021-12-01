@@ -1,0 +1,30 @@
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if root is None:
+            return None
+        dq = collections.deque()
+        dq.append(root)
+        ans = []
+        cur = []
+        
+        while dq:
+            for i in range(len(dq)):
+
+
+                node = dq.popleft()
+                if node: 
+                    cur.append(node.val)
+
+
+
+                    if node.left:
+                        dq.append(node.left)
+                    if node.right:
+                        dq.append(node.right)
+                
+                
+            ans.append(cur)
+            cur = []
+            
+        return ans
+        
