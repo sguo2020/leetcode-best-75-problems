@@ -1,0 +1,14 @@
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        c = Counter(bin(n)[2:])
+    
+        return c['1']
+        ____________
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        res = 0 
+        while n:
+            n &= (n-1)
+            res += 1
+    
+        return res
