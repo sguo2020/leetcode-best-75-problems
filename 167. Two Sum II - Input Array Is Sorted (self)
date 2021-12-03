@@ -1,0 +1,9 @@
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        numDict = collections.defaultdict()
+        
+        for i in range(0, len(numbers)):
+            if target - numbers[i] in numDict:
+                return [numDict[target - numbers[i]]+1, i+1]
+            else:
+                numDict[numbers[i]] = i
