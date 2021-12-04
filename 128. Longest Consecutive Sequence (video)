@@ -1,0 +1,32 @@
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        numSet = set(nums)
+        longest = 0
+        for n in nums:
+            if (n-1) not in numSet:
+                length = 1
+                while (n + length) in numSet:
+                    length += 1
+                longest = max(longest, length)
+         return longest
+         
+Runtime: 1916 ms, faster than 25% of Python3 online submissions for Longest Consecutive Sequence.
+Memory Usage: 25.6 MB, less than 85.93% of Python3 online submissions for Longest Consecutive Sequence.   
+--------------------------
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        numSet = set(nums)
+        longest = 0
+        for n in numSet:   #### use numSet not nums
+            if (n-1) in numSet:
+                continue
+            
+            length = 0
+            while n in numSet:
+                length += 1
+                n += 1
+            longest = max(longest, length)
+        return longest
+Runtime: 184 ms, faster than 87.42% of Python3 online submissions for Longest Consecutive Sequence.
+Memory Usage: 25.6 MB, less than 89.26% of Python3 online submissions for Longest Consecutive Sequence.     
+        
