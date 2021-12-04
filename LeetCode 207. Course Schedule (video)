@@ -1,0 +1,29 @@
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        preMap = collections.defaultdict(list)
+        #[[1,0],[0,1]]
+        for crs, pre in prerequisites:
+            preMap[crs].append(pre)
+        # preMap = {1:0, 0:1}
+        visited = set()
+
+        def helper(crs):   # False is cycle, True is no pre
+            if crs in visited:
+                return False
+            if preMap[crs]==[]:
+                return True
+
+            visited.add(crs) # for crs #1, visted = {1, 0}
+
+            for pre in preMap[crs]:  # if pre didn't clear, return False
+                if not helper(pre): return False  #call helper(0), call helper(1)
+
+            visited.remove(crs)
+
+            preMap[crs]= []
+            return True
+
+        for crs in range(numCourses):
+            if not helper(crs): return False
+
+        return True
