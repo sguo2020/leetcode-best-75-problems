@@ -1,0 +1,28 @@
+class Solution:
+    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+        m, n = len(heights), len(heights[0])
+        p, a = [], []    # starting points for p ,a
+        vp, va = set(), set() #[r,c] checked for p, a
+        
+        for r in range(m):
+            p.append((r, 0))
+            a.append((r, n-1))
+    
+        for c in range(n):
+            p.append((0, c))
+            a.append((m-1, c))
+     
+        directions = [(1,0),(-1,0), (0,1),(0,-1)]
+        
+        def dfs(r, c, visited):
+            visited.add((r,c))
+            for di, dj in directions:
+                new_r, new_c = r+di, c+dj 
+                if  (new_r, new_c) not in visited and (-1 < new_r < m and -1 < new_c < n)\
+                    and heights[r][c]<= heights[new_r][new_c]:
+                    dfs(new_r, new_c, visited)
+                    
+        for r, c in p: dfs(r,c,vp)
+        for r, c in a: dfs(r,c,va)
+        
+        return vp & va
