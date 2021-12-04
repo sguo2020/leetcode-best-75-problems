@@ -1,0 +1,18 @@
+class Solution:
+    def numDecodings(self, s: str) -> int:
+        if s[0] == '0': print(0, 'e')
+
+        count1, count2 = 1,1
+        for i in range(1, len(s)):
+            d = int(s[i])-int('0')
+     
+            dd = (int(s[i-1]) - int('0'))*10 +d
+
+            temp = 0
+            if d>0: temp += count2
+            if 10<= dd <= 26:
+                temp += count1
+            count1 = count2
+            count2 = temp
+
+        return count2
