@@ -1,0 +1,13 @@
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        
+        last = nums[0]
+        
+        
+        for idx, x in enumerate(nums):
+            if idx <= last:
+                last = max(last, idx+x)
+                if last >= len(nums)-1:
+                    return True
+
+        return last>= len(nums)-1
