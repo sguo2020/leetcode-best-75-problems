@@ -1,1 +1,105 @@
+https://www.youtube.com/watch?v=8f1XPm4WOUc
+https://coggle.it/diagram/YavvejOIUmbMszTp/t/graph-valid-tree
 
+edges = [[0, 1], [1, 2], [3,4]]
+n=5
+
+def countComponents(n, edges): 
+    par = [i for i in range(n)]
+  
+    rank = [1] * n               # number of connections
+  
+
+
+    def find(n1):                 # find root parent
+        print('find parent of ', n1)             
+        res1 = n1                #temporarily itself
+        
+        while res1 != par[res1]:  
+            print('already have a parent, set parent as grand parent')
+            print('current parent ', res1)
+            par[res1] = par[par[res1]] #path compression: google it, how union find problem are optimized
+            res1 = par[res1]
+            print('parent now ' , res1)
+        print('parent of ', n1, 'is', res1)
+        return res1              # res is it is own root parent
+
+
+    def union(n1, n2):   # union parent and child
+        print('union call')
+        p1, p2 = find(n1), find(n2) # find root parent
+        
+        if p1 == p2:     # same parent, no union
+            print('already related')
+            return 0
+
+        if rank[p2] > rank[p1]:   #rank 1, self, rank 2 parent, rank 3, grand
+            print('different generation')
+            par[p1] = p2
+            print(rank, 'rank pre')
+            rank[p2] += rank[p1]
+            print(par, rank,'pr')
+        else: 
+            print(n1,n2, ' not related yet, no rank problem')
+            print(par, rank, 'pr1')
+            par[p2] = p1          # set p1 is p2 parent
+            print('parent of ', p2, ' is ', p1)
+            rank[p1] += rank[p2]
+            print(par, rank, 'pr2')
+        print('perform 1 union')
+        return 1
+
+    res  = n                   # count of  componests, start as n, equals to 5
+    for n1, n2 in edges:       # [[0, 1], [1, 2], [3, 4]]
+        print('visit new edge', n1, n2)
+        c = union(n1, n2)      # union = 1, components -1
+        print('total reduced to ', res-1)
+        res -=  c
+        
+
+    return res
+
+
+print(countComponents(n, edges))
+---------------------
+output: 
+visit new edge 0 1
+union call
+find parent of  0
+parent of  0 is 0
+find parent of  1
+parent of  1 is 1
+0 1  not related yet, no rank problem
+[0, 1, 2, 3, 4] [1, 1, 1, 1, 1] pr1
+parent of  1  is  0
+[0, 0, 2, 3, 4] [2, 1, 1, 1, 1] pr2
+perform 1 union
+total reduced to  4
+visit new edge 1 2
+union call
+find parent of  1
+already have a parent, set parent as grand parent
+current parent  1
+parent now  0
+parent of  1 is 0
+find parent of  2
+parent of  2 is 2
+1 2  not related yet, no rank problem
+[0, 0, 2, 3, 4] [2, 1, 1, 1, 1] pr1
+parent of  2  is  0
+[0, 0, 0, 3, 4] [3, 1, 1, 1, 1] pr2
+perform 1 union
+total reduced to  3
+visit new edge 3 4
+union call
+find parent of  3
+parent of  3 is 3
+find parent of  4
+parent of  4 is 4
+3 4  not related yet, no rank problem
+[0, 0, 0, 3, 4] [3, 1, 1, 1, 1] pr1
+parent of  4  is  3
+[0, 0, 0, 3, 3] [3, 1, 1, 2, 1] pr2
+perform 1 union
+total reduced to  2
+2
