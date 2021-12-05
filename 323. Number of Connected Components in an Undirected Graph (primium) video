@@ -1,16 +1,11 @@
 https://www.youtube.com/watch?v=8f1XPm4WOUc
 https://coggle.it/diagram/YavvejOIUmbMszTp/t/graph-valid-tree
 
-edges = [[0, 1], [1, 2], [3,4]]
-n=5
+edges = [[0, 1], [1, 2], [3,4]]; n=5
 
 def countComponents(n, edges): 
     par = [i for i in range(n)]
-  
     rank = [1] * n               # number of connections
-  
-
-
     def find(n1):                 # find root parent
         print('find parent of ', n1)             
         res1 = n1                #temporarily itself
@@ -23,7 +18,6 @@ def countComponents(n, edges):
             print('parent now ' , res1)
         print('parent of ', n1, 'is', res1)
         return res1              # res is it is own root parent
-
 
     def union(n1, n2):   # union parent and child
         print('union call')
@@ -55,11 +49,7 @@ def countComponents(n, edges):
         c = union(n1, n2)      # union = 1, components -1
         print('total reduced to ', res-1)
         res -=  c
-        
-
     return res
-
-
 print(countComponents(n, edges))
 ---------------------
 output: 
