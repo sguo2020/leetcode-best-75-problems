@@ -1,0 +1,45 @@
+from collections import *
+
+intervals = [[0,30],[5,10],[15,20]]
+#Output: 2
+
+intervals1 = [[7,10],[2,4]]
+#Output: 1
+
+# determin if there is any overlap
+
+intervals.sort(key = lambda x:x[0])
+print(intervals)
+
+room = []
+#room  = [[intervals[0]], [intervals[1], intervals[2]]]
+
+i=1
+
+room.append(intervals[0])
+print(room)
+
+
+while i < len(intervals):
+    print('while loop', intervals[i], len(intervals))
+    placed = False
+    for x in room:
+        print('for loop', x, room)
+        print(x[1], intervals[i][0])
+        if x[1] < intervals[i][0]:
+            #print('c1')
+            x.append(intervals[i])
+            placed = True
+            print(placed)
+            break
+
+    
+    print('c2')
+    if placed == False:
+        room.append(intervals[i])
+    print(room)
+            
+    i += 1
+
+
+print(len(room))
