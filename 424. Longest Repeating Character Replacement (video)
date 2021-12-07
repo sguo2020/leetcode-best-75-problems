@@ -1,0 +1,49 @@
+s = "AABABBA"; k =2
+    
+count = {}
+res = 0
+l=0
+
+for r in range(len(s)):
+    print('for loop')
+    
+    count[s[r]] = 1 + count.get(s[r], 0)  # to get s[r] count but avoid void error
+    
+    while (r - l + 1) - max(count.values()) > k:  #r,l = right, left
+        print('while loop')
+        max_diff = (r - l + 1) - max(count.values()) 
+
+        count[s[l]] -= 1
+        print(count[s[l]])
+        l += 1
+        print(count)
+
+    res = max(res, r - l + 1)
+    print(res)
+-----------------
+s = "Longest Repeating Character"; k =2
+    
+count = {}
+res = 0
+l=0
+maxf = 0
+
+for r in range(len(s)):
+    print('for loop')
+    
+    count[s[r]] = 1 + count.get(s[r], 0)  # to get s[r] count but avoid void error
+    maxf = max(maxf, count[s[r]])  ## This is better than max(count.values())
+
+    print(maxf, count)
+    while (r - l + 1) - maxf > k:  #r,l = right, left
+        print('while loop')
+        
+
+        count[s[l]] -= 1
+
+        print(count[s[l]])
+        l += 1
+        print(count)
+
+    res = max(res, r - l + 1)
+    print(res)
