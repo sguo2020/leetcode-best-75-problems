@@ -1,0 +1,40 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        if len(s)== 1: return True  
+        # uppercase string list
+        ls = list(s.upper())
+        # lc is list of alphanumeric items
+        lc = []
+        
+        for x in ls:
+            if x.isalnum():
+                lc.append(x)
+                
+        for i in range(0, len(lc)):
+            print('for loop')
+            print(lc[i], lc[-(i+1)])
+            if lc[i] != lc[-(i+1)]:
+                return False
+            
+        return True
+        ---------
+        Runtime: 100 ms, faster than 6.71% of Python3 online submissions for Valid Palindrome.
+        Memory Usage: 15.8 MB, less than 19.15% of Python3 online submissions for Valid Palindrome.
+       #2 solution 
+        
+        class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        if len(s)== 1: return True  
+        # uppercase string list
+        ls = list(s.upper())
+        # lc is list of alphanumeric items
+        lc = []
+        
+        for x in ls:
+            if x.isalnum():
+                lc.append(x)
+           
+        return lc == lc[::-1]
+        Runtime: 48 ms, faster than 67.51% of Python3 online submissions for Valid Palindrome.
+        Memory Usage: 15.9 MB, less than 16.82% of Python3 online submissions for Valid Palindrome.
+        
