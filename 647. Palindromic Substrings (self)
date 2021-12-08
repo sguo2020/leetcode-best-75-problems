@@ -1,0 +1,37 @@
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        left = 0
+        right = 0
+        K = len(s)
+        p = 0
+        for left in range(0,K):
+            for right in range(left+1,K+1):
+                
+                if s[left:right] == s[left:right][::-1]:
+                    p += 1
+                
+        return p
+        _______________
+        
+# first, result equals all single letter.  then look for double s-s, then look for u-s-s-u, last look for s-u-s, then l-s-u-s-l
+s = 'nrtsbsusbstrrtsbsi'
+
+LEN_S = len(s)
+print(len(s))
+result = len(s)
+for i in range(len(s)):
+    print('for', i, result)
+    l,r = i,i
+    print(l, r+1)
+    
+    while r + 1 < LEN_S and s[l] == s[r+1]:
+        print(s[l],s[r+1], 2)
+        print('while, 1')
+        r += 1
+        result += 1
+    while r + 1 < LEN_S and l > 0 and s[l-1] == s[r+1]:
+        print('while, 2')
+        r += 1
+        l -= 1
+        result += 1
+print(result)
