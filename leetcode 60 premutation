@@ -1,0 +1,41 @@
+n = 4
+k = 9
+
+
+def kth(n: int, k: int) -> str:
+
+    # np is factorial list, [1,1,2,6,24]
+    np = [1]*(n+1)
+    print(np, 0)
+
+    for i in range(1, 1+n):
+        np[i] = i * np[i-1]
+    print(np, 1)
+
+    # result  is answer, [2, 3,1,4]
+    # result = []
+    result = ''
+
+    # digits is number list [1,2,3,4]
+    digits = list(range(1, n+1))
+    print(digits, 2)
+
+    k = k-1
+    for i in range(1, n):
+        v = k // np[n - i]
+        k = k % np[n - i]
+        result += str(digits[v])
+        digits.remove(int(result[-1]))
+        print(result, digits, 3)
+    result += str(digits[0])
+
+    print(result, 4)
+
+    # return ''.join([str(c) for c in result])
+    print(result)
+    return result
+
+
+# print(kth(3,3))
+print(kth(4, 9))
+# print(kth(3,1))
