@@ -15,6 +15,6 @@ class Solution:
                 dp_min[i] = min(dp_min[i-1]*nums[i], nums[i])
             else:
                 dp_max[i] = max(dp_min[i-1]*nums[i], nums[i])
-                dp_min[i] = max(dp_max[i-1]*nums[i], nums[i])
+                dp_min[i] = min(dp_max[i-1]*nums[i], nums[i])
                 
         return max(dp_max)
