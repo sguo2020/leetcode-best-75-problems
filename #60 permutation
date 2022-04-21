@@ -1,0 +1,19 @@
+class Solution:
+    def getPermutation(self, n: int, k: int) -> str:
+        fact = [1]
+        nums = [1]
+        ans = ''
+        k -= 1
+        for x in range(1, n):
+            fact.append(x * fact[-1])
+            nums.append(x + 1)
+        while k: 
+            i = k // fact[n -1]
+            ans += str(nums[i])
+            k -= i * fact[n -1]
+            n -= 1
+            nums.remove(nums[i])
+        for num in nums:
+            ans += str(num)
+            
+        return ans
