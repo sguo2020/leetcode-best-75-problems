@@ -1,0 +1,20 @@
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:        
+        
+        def recurse(s, memo):
+            # print(s, memo)
+            if s in memo:
+                return memo[s]
+            if s == '':
+                memo[s] = True
+                return memo[s]
+            for word in wordDict:
+                if word in s and s.index(word) == 0 and recurse(s[len(word):], memo):
+                    memo[s] = True
+                    return memo[s]
+            memo[s] = False
+            return memo[s]
+            
+        memo = {}        
+        return recurse(s, memo)
+        
